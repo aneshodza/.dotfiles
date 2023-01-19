@@ -24,6 +24,7 @@ colorscheme onedark
 
 " shortcuts
 command! -nargs=* F Files <args>
+command! -nargs=* FF Ag <args>
 
 " vim-plugged
 call plug#begin('~/.vim/plugged')
