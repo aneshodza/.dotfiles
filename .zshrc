@@ -25,6 +25,7 @@ alias code='open . -a Visual\ Studio\ Code.app'
 # git
 alias g='git'
 alias gitf='g fetch --all --prune'
+alias grh='g reset --hard'
 alias gc='g checkout'
 alias gcd='g checkout develop'
 alias gst='g status'
