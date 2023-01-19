@@ -48,6 +48,10 @@ function vimf() {
 }
 alias vimf='vimf'
 
+# misc
+alias c='clear'
+alias :q='exit'
+
 antigen bundle zsh-users/zsh-autosuggestions
 antigen bundle tpope/vim-surround
 antigen bundle tpope/vim-commentary
