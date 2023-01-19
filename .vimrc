@@ -27,6 +27,18 @@ autocmd vimenter * if !argc() | NERDTree | endif
 let NERDTreeShowHidden=1
 let g:NERDTreeGitStatusShowIgnored = 1
 let g:NERDTreeGitStatusConcealBrackets = 1
+let g:NERDTreeGitStatusIndicatorMapCustom = {
+	\ 'Modified': '~',
+	\ 'Staged': '+',
+	\ 'Untracked': '?',
+	\ 'Renamed': '>',
+	\ 'Unmerged': '=',
+	\ 'Deleted': '-',
+	\ 'Dirty': '!',
+	\ 'Clean': 'c',
+	\ 'Ignored': 'I',
+	\ 'Unknown': '¿'
+	\ }
 
 " theme
 packadd! onedark.vim
@@ -43,6 +55,7 @@ call plug#begin('~/.vim/plugged')
 
 Plug 'git@github.com:preservim/nerdtree.git'
 Plug 'git@github.com:Xuyuanp/nerdtree-git-plugin.git'
+Plug 'git@github.com:airblade/vim-gitgutter.git'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
 Plug 'git@github.com:github/copilot.vim.git'
