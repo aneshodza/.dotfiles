@@ -14,5 +14,7 @@ call plug#begin('~/.vim/plugged')
 
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
+Plug 'git@github.com:github/copilot.vim.git'
+Plug 'git@github.com:junegunn/fzf.vim.git'
 
 call plug#end()

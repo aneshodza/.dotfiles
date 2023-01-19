@@ -44,3 +44,5 @@ antigen bundle tpope/vim-surround
 antigen bundle tpope/vim-commentary
 
 antigen apply
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
