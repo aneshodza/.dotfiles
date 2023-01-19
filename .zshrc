@@ -11,8 +11,17 @@ antigen theme https://github.com/denysdovhan/spaceship-zsh-theme
 # plugins
 plugins=(fzf zsh-autosuggestions)
 
+# import other .zsh files
+for conf in ~/*.zsh; do
+	source "${conf}"
+done
+
 # fzf
 export FZF_DEFAULT_COMMAND="find . -path '*/\.*' -type d -prune -o -type f -print -o -type l -print 2> /dev/null | sed s/^..//"
+
+# jmp
+alias jmpr='cd ~/r'
+alias jmpvw='cd ~/c/veloweg_all/veloweg'
 
 # editors
 alias mine='rubymine $1'
