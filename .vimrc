@@ -12,6 +12,10 @@ syntax enable
 syntax on
 filetype plugin indent on
 
+" theme
+packadd! onedark.vim
+colorscheme onedark
+
 " shortcuts
 command! -nargs=* F Files <args>
 
@@ -23,6 +27,7 @@ Plug 'tpope/vim-surround'
 Plug 'git@github.com:github/copilot.vim.git'
 Plug 'git@github.com:junegunn/fzf.git'
 Plug 'git@github.com:junegunn/fzf.vim.git'
+Plug 'git@github.com:sheerun/vim-polyglot.git'
 
 call plug#end()
 
