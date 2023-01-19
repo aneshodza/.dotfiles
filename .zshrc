@@ -32,6 +32,7 @@ alias gcd='g checkout develop'
 alias gst='g status'
 alias gac='g add -A; g commit -m $1'
 alias gp='g push'
+alias gpl='g pull'
 
 # ruby
 alias ber='bundle exec rspec'

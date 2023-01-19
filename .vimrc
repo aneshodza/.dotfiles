@@ -18,6 +18,10 @@ set smartcase
 set incsearch
 let g:ackprg = 'ag --vimgrep'
 
+" statusline
+set laststatus=2
+set statusline=%<%F\ %h%m%r%=%-14.(%l,%c%V%)\ %P
+
 " theme
 packadd! onedark.vim
 colorscheme onedark
