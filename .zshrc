@@ -11,11 +11,6 @@ antigen theme https://github.com/denysdovhan/spaceship-zsh-theme
 # plugins
 plugins=(fzf zsh-autosuggestions)
 
-# import other .zsh files
-for conf in ~/*.zsh; do
-	source "${conf}"
-done
-
 # fzf
 export FZF_DEFAULT_COMMAND="find . -path '*/\.*' -type d -prune -o -type f -print -o -type l -print 2> /dev/null | sed s/^..//"
 
@@ -33,6 +28,7 @@ alias gitf='g fetch --all --prune'
 alias gcd='g checkout develop'
 alias gst='g status'
 alias gac='g add -A; g commit -m $1'
+alias gp='g push'
 
 # ruby
 alias ber='bundle exec rspec'
