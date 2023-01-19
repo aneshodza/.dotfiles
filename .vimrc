@@ -12,6 +12,12 @@ syntax enable
 syntax on
 filetype plugin indent on
 
+" text search
+set ignorecase
+set smartcase
+set incsearch
+let g:ackprg = 'ag --vimgrep'
+
 " theme
 packadd! onedark.vim
 colorscheme onedark
