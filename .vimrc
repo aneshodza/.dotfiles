@@ -22,6 +22,12 @@ let g:ackprg = 'ag --vimgrep'
 set laststatus=2
 set statusline=%<%F\ %h%m%r%=%-14.(%l,%c%V%)\ %P
 
+" nerdtree
+autocmd vimenter * if !argc() | NERDTree | endif
+let NERDTreeShowHidden=1
+let g:NERDTreeGitStatusShowIgnored = 1
+let g:NERDTreeGitStatusConcealBrackets = 1
+
 " theme
 packadd! onedark.vim
 colorscheme onedark
@@ -29,10 +35,14 @@ colorscheme onedark
 " shortcuts
 command! -nargs=* F Files <args>
 command! -nargs=* FF Ag <args>
+command! -nargs=* T NERDTree <args>
+command! -nargs=* Q qa <args>
 
 " vim-plugged
 call plug#begin('~/.vim/plugged')
 
+Plug 'git@github.com:preservim/nerdtree.git'
+Plug 'git@github.com:Xuyuanp/nerdtree-git-plugin.git'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
 Plug 'git@github.com:github/copilot.vim.git'
@@ -41,5 +51,3 @@ Plug 'git@github.com:junegunn/fzf.vim.git'
 Plug 'git@github.com:sheerun/vim-polyglot.git'
 
 call plug#end()
-
-let g:fzf_action = { 'enter': 'tab split' }

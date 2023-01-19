@@ -40,7 +40,14 @@ alias rr='rails routes'
 alias repl='rails db:seed:replant'
 
 # vim
-alias vimf='vim $(fzf --height 40% --reverse)'
+function vimf() {
+	file=$(fzf --height 40% --reverse)
+	if [[ -n "$file" ]]; then
+		vim "$file"
+	fi
+}
+alias vimf='vimf'
+
 antigen bundle zsh-users/zsh-autosuggestions
 antigen bundle tpope/vim-surround
 antigen bundle tpope/vim-commentary
