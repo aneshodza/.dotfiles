@@ -2,9 +2,9 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
 eval "$(/opt/homebrew/bin/brew shellenv)"
 source /opt/homebrew/share/antigen/antigen.zsh
 
+# oh-my-zsh and theme
 antigen use oh-my-zsh
 antigen theme https://github.com/denysdovhan/spaceship-zsh-theme 
-antigen apply
 
 . $(brew --prefix asdf)/libexec/asdf.sh
 
@@ -32,3 +32,8 @@ alias repl='rails db:seed:replant'
 
 # vim
 alias vimf='vim $(fzf --height 40% --reverse)'
+antigen bundle zsh-users/zsh-autosuggestions
+antigen bundle tpope/vim-surround
+antigen bundle tpope/vim-commentary
+
+antigen apply
