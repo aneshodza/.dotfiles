@@ -8,9 +8,6 @@ antigen apply
 
 . $(brew --prefix asdf)/libexec/asdf.sh
 
-# visuals
-ZSH_THEME="Monocraft"
-
 # plugins
 plugins=(fzf zsh-autosuggestions)
 
@@ -26,6 +23,7 @@ alias g='git'
 alias gitf='g fetch --all --prune'
 alias gcd='g checkout develop'
 alias gst='g status'
+alias gac='g add -A; g commit -m $1'
 
 # ruby
 alias ber='bundle exec rspec'
