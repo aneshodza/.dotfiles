@@ -12,6 +12,7 @@ antigen theme https://github.com/denysdovhan/spaceship-zsh-theme
 plugins=(fzf zsh-autosuggestions)
 
 # fzf
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export FZF_DEFAULT_COMMAND="find . -path '*/\.*' -type d -prune -o -type f -print -o -type l -print 2> /dev/null | sed s/^..//"
 
 # jmp
@@ -44,5 +45,3 @@ antigen bundle tpope/vim-surround
 antigen bundle tpope/vim-commentary
 
 antigen apply
-
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

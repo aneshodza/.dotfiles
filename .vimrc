@@ -4,12 +4,18 @@ set ruler
 set statusline+=%F
 set backspace=indent,eol,start
 set encoding=utf-8
+set autoindent
+set smartindent
 
+" enable syntax highlighting
+syntax enable
 syntax on
 filetype plugin indent on
 
+" shortcuts
 command! -nargs=* F Files <args>
 
+" vim-plugged
 call plug#begin('~/.vim/plugged')
 
 Plug 'tpope/vim-commentary'
