@@ -43,6 +43,9 @@ let g:NERDTreeGitStatusIndicatorMapCustom = {
 packadd! onedark.vim
 colorscheme onedark
 
+" fzf
+let g:fzf_action = { 'enter': 'tab split' }
+
 " shortcuts
 command! -nargs=* F Files <args>
 command! -nargs=* FF Ag <args>
