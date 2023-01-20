@@ -47,7 +47,7 @@ colorscheme onedark
 command! -nargs=* F Files <args>
 command! -nargs=* FF Ag <args>
 command! -nargs=* T NERDTree <args>
-command! -nargs=* Q qa <args>
+command! -nargs=* Q wqa <args>
 
 " vim-plugged
 call plug#begin('~/.vim/plugged')

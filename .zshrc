@@ -48,9 +48,17 @@ function vimf() {
 }
 alias vimf='vimf'
 
+# thefuck
+eval $(thefuck --alias)
+alias tf='fuck'
+
+# speedtest
+alias lag='~/.speedtest/speedtest-cli'
+
 # misc
 alias c='clear'
 alias :q='exit'
+alias la='ls -a'
 
 antigen bundle zsh-users/zsh-autosuggestions
 antigen bundle tpope/vim-surround
