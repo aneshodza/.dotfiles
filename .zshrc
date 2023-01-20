@@ -19,7 +19,7 @@ export FZF_DEFAULT_COMMAND="find . -path '*/\.*' -type d -prune -o -type f -prin
 alias jmpr='cd ~/r'
 alias jmpvw='cd ~/c/vw'
 alias jmpc='cd ~/c'
-alias jmpp='cd ~/c/p'
+alias jmpp='cd ~/p'
 
 # editors
 alias mine='rubymine $1'
