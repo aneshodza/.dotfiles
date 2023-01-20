@@ -33,7 +33,7 @@ alias gc='g checkout'
 alias gcd='g checkout develop'
 alias gst='g status'
 alias gac='g add -A; g commit -m $1'
-alias gp='g push'
+alias gp='g push --set-upstream origin $(g rev-parse --abbrev-ref HEAD)'
 alias gpl='g pull'
 
 # ruby
