@@ -1,7 +1,6 @@
 " basic settings
 set number
 set ruler
-set statusline+=%F
 set backspace=indent,eol,start
 set encoding=utf-8
 set autoindent
