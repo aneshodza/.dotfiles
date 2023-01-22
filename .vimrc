@@ -24,6 +24,7 @@ set statusline=%<%F\ %h%m%r%=%-14.(%l,%c%V%)\ %P
 " coc
 inoremap <silent><expr> <Space> coc#pum#visible() ? coc#pum#confirm() : "\<Space>"
 inoremap <silent><expr> <C-@> coc#refresh()
+inoremap <silent><expr> <Esc> coc#pum#visible() ? coc#pum#close() : "\<Esc>"
 
 " nerdtree
 autocmd vimenter * if !argc() | NERDTree | endif
