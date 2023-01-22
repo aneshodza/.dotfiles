@@ -21,6 +21,9 @@ let g:ackprg = 'ag --vimgrep'
 set laststatus=2
 set statusline=%<%F\ %h%m%r%=%-14.(%l,%c%V%)\ %P
 
+" coc
+inoremap <silent><expr> <Space> coc#pum#confirm()
+
 " nerdtree
 autocmd vimenter * if !argc() | NERDTree | endif
 let NERDTreeShowHidden=1
@@ -56,6 +59,7 @@ command! -nargs=* Q wqa <args>
 call plug#begin('~/.vim/plugged')
 
 Plug 'git@github.com:preservim/nerdtree.git'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'git@github.com:Xuyuanp/nerdtree-git-plugin.git'
 Plug 'git@github.com:airblade/vim-gitgutter.git'
 Plug 'tpope/vim-commentary'
