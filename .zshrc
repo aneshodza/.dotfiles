@@ -57,6 +57,9 @@ alias tf='fuck'
 # speedtest
 alias lag='~/.speedtest/speedtest-cli'
 
+# solargraph
+SOLARGRAPH_GLOBAL_CONFIG='~/.dotfiles/.solargraph.yml'
+
 # misc
 alias c='clear'
 alias :q='exit'
