@@ -25,9 +25,7 @@ set laststatus=2
 set statusline=%<%F\ %h%m%r%=%-14.(%l,%c%V%)\ %P
 
 " coc
-inoremap <silent><expr> <Space> coc#pum#visible() ? coc#pum#confirm() : "\<Space>"
-inoremap <silent><expr> <C-@> coc#refresh()
-inoremap <silent><expr> <Esc> coc#pum#visible() ? coc#pum#close() : "\<Esc>"
+inoremap <silent><expr> <C-@> coc#pum#visible() ? coc#pum#confirm() : coc#refresh()
 let g:coc_global_extensions = ['coc-html', 'coc-tsserver', 'coc-rust-analyzer', 'coc-css']
 
 " nerdtree
