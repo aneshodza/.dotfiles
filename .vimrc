@@ -25,6 +25,7 @@ set statusline=%<%F\ %h%m%r%=%-14.(%l,%c%V%)\ %P
 inoremap <silent><expr> <Space> coc#pum#visible() ? coc#pum#confirm() : "\<Space>"
 inoremap <silent><expr> <C-@> coc#refresh()
 inoremap <silent><expr> <Esc> coc#pum#visible() ? coc#pum#close() : "\<Esc>"
+let g:coc_global_extensions = ['coc-html', 'coc-tsserver', 'coc-rust-analyzer', 'coc-css']
 
 " nerdtree
 autocmd vimenter * if !argc() | NERDTree | endif
@@ -60,6 +61,7 @@ command! -nargs=* Q wqa <args>
 " vim-plugged
 call plug#begin('~/.vim/plugged')
 
+Plug 'vim-airline/vim-airline'
 Plug 'git@github.com:preservim/nerdtree.git'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'git@github.com:Xuyuanp/nerdtree-git-plugin.git'
