@@ -25,6 +25,31 @@ alias jmpp='cd ~/p'
 alias mine='rubymine $1'
 alias code='open . -a Visual\ Studio\ Code.app'
 
+# run
+function runner() {
+	if [[ -f "bin/dev" ]]; then
+		bin/dev
+	elif [[ -f "bin/run" ]]; then
+		bin/run
+	elif [[ -f "bin/start" ]]; then
+		bin/start
+	else
+		echo "No bin/dev, bin/run, or bin/start found"
+		if [ -z "$1" ]; then
+			echo "Give a language/framework as an argument to run a default command"
+			return 1
+		elif [[ "$1" == "ruby" ]]; then
+			bundle exec rails s
+		elif [[ "$1" == "react" ]]; then
+			npm start
+		else
+			echo "No default command found for $1"
+			return 2
+		fi
+	fi
+}
+alias run='runner $1'
+
 # git
 alias g='git'
 alias gitf='g fetch --all --prune'
