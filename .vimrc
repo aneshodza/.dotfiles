@@ -8,6 +8,9 @@ set smartindent
 set tabstop=4
 set shiftwidth=4
 set expandtab
+set hlsearch
+set showmatch
+set mouse=a
 
 " enable syntax highlighting
 syntax enable
