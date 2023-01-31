@@ -61,6 +61,14 @@ alias gac='g add -A; g commit -m $1'
 alias gp='g push --set-upstream origin $(g rev-parse --abbrev-ref HEAD)'
 alias gpl='g pull'
 
+function gacp() {
+	echo "Committing with message: $1"
+	git add -A
+	git commit -m $1
+	git push --set-upstream origin $(git rev-parse --abbrev-ref HEAD)
+}
+alias gacp='gacp $1'
+
 # ruby
 alias ber='bundle exec rspec'
 alias rr='rails routes'
