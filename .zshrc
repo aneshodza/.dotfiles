@@ -85,6 +85,10 @@ alias lag='~/.speedtest/speedtest-cli'
 # solargraph
 SOLARGRAPH_GLOBAL_CONFIG='~/.dotfiles/.solargraph.yml'
 
+# keybinds
+bindkey "^[[A" history-beginning-search-backward
+bindkey "^[[B" history-beginning-search-forward
+
 # misc
 alias c='clear'
 alias :q='exit'
