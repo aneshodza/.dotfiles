@@ -58,7 +58,7 @@ let g:fzf_action = { 'enter': 'tab split' }
 
 " shortcuts
 command! -nargs=* F Files <args>
-command! -nargs=* FF Ag <args>
+command! -nargs=* FF Rg <args>
 command! -nargs=* T NERDTree <args>
 command! -nargs=* Q wqa <args>
 
