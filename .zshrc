@@ -5,6 +5,7 @@ source /opt/homebrew/share/antigen/antigen.zsh
 # oh-my-zsh and theme
 antigen use oh-my-zsh
 antigen theme https://github.com/denysdovhan/spaceship-zsh-theme 
+SPACESHIP_BATTERY_SHOW=false
 
 . $(brew --prefix asdf)/libexec/asdf.sh
 
