@@ -68,6 +68,10 @@ function gacp() {
 	echo "Committing with message: $1"
 	git add -A
 	git commit -m $1
+	if [ $? -ne 0 ]; then
+		echo "Commit failed, most likely due to hooks"
+		return 1
+	fi
 	git push --set-upstream origin $(git rev-parse --abbrev-ref HEAD)
 }
 alias gacp='gacp $1'
