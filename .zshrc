@@ -60,6 +60,7 @@ alias gcd='g checkout develop'
 alias gst='g status'
 alias gac='g add -A; g commit -m $1'
 alias gp='g push --set-upstream origin $(g rev-parse --abbrev-ref HEAD)'
+alias gdm='git branch --merged | grep -v \* | xargs git branch -D' # Deletes all merged branches
 alias gpl='g pull'
 
 function gacp() {
