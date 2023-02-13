@@ -66,11 +66,10 @@ function! RipgrepFzf(query, fullscreen)
   call fzf#vim#grep(initial_command, 1, spec, a:fullscreen)
 endfunction
 
-command! -nargs=* -bang Rg call RipgrepFzf(<q-args>, <bang>0)
 
 " shortcuts
 command! -nargs=* F Files <args>
-command! -nargs=* FF Rg <args>
+command! -nargs=* -bang FF call RipgrepFzf(<q-args>, <bang>0)
 command! -nargs=* T NERDTree <args>
 command! -nargs=* Q wqa <args>
 
