@@ -110,7 +110,5 @@ alias :q='exit'
 alias la='ls -a'
 
 antigen bundle zsh-users/zsh-autosuggestions
-antigen bundle tpope/vim-surround
-antigen bundle tpope/vim-commentary
 
 antigen apply
