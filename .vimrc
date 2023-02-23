@@ -88,5 +88,6 @@ Plug 'git@github.com:junegunn/fzf.git'
 Plug 'git@github.com:junegunn/fzf.vim.git'
 Plug 'git@github.com:sheerun/vim-polyglot.git'
 Plug 'instant-markdown/vim-instant-markdown', {'for': 'markdown', 'do': 'yarn install'}
+Plug 'rust-lang/rust.vim'
 
 call plug#end()
