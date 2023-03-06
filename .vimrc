@@ -66,6 +66,10 @@ function! RipgrepFzf(query, fullscreen)
   call fzf#vim#grep(initial_command, 1, spec, a:fullscreen)
 endfunction
 
+" md-preview
+let g:mkdp_auto_start = 1
+
+
 
 " shortcuts
 command! -nargs=* F Files <args>
@@ -89,5 +93,6 @@ Plug 'git@github.com:junegunn/fzf.vim.git'
 Plug 'git@github.com:sheerun/vim-polyglot.git'
 Plug 'instant-markdown/vim-instant-markdown', {'for': 'markdown', 'do': 'yarn install'}
 Plug 'rust-lang/rust.vim'
+Plug 'lervag/vimtex'
 
 call plug#end()
