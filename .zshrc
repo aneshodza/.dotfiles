@@ -74,7 +74,9 @@ function gacp() {
 	fi
 	git push --set-upstream origin $(git rev-parse --abbrev-ref HEAD)
 }
+
 alias gacp='gacp $1'
+alias gaap='git add -A; git commit --amend --no-edit; git push --set-upstream origin $(git rev-parse --abbrev-ref HEAD)'
 
 # ruby
 alias ber='bundle exec rspec'
@@ -85,10 +87,11 @@ alias repl='rails db:seed:replant'
 function vimf() {
 	file=$(fzf --height 40% --reverse)
 	if [[ -n "$file" ]]; then
-		vim "$file"
+		nvim "$file"
 	fi
 }
 alias vimf='vimf'
+alias vim='nvim'
 
 # thefuck
 eval $(thefuck --alias)
