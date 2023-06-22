@@ -2,6 +2,8 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
 eval "$(/opt/homebrew/bin/brew shellenv)"
 source /opt/homebrew/share/antigen/antigen.zsh
 
+[ -e "$HOME/.birthday_reminder/release/birthday-reminder" ] && "$HOME/.birthday_reminder/release/birthday-reminder"
+
 # oh-my-zsh and theme
 antigen use oh-my-zsh
 antigen theme https://github.com/denysdovhan/spaceship-zsh-theme 
@@ -57,6 +59,7 @@ alias gitf='g fetch --all --prune'
 alias grh='g reset --hard'
 alias gc='g checkout'
 alias gcd='g checkout develop'
+alias gcm='g checkout main'
 alias gst='g status'
 alias gac='g add -A; g commit -m $1'
 alias gp='g push --set-upstream origin $(g rev-parse --abbrev-ref HEAD)'
@@ -79,7 +82,7 @@ alias gacp='gacp $1'
 alias gaap='git add -A; git commit --amend --no-edit; git push --set-upstream origin $(git rev-parse --abbrev-ref HEAD)'
 
 # ruby
-alias ber='bundle exec rspec'
+alias ber='bundle exec rspc'
 alias rr='rails routes'
 alias repl='rails db:seed:replant'
 
