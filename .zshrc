@@ -82,7 +82,7 @@ alias gacp='gacp $1'
 alias gaap='git add -A; git commit --amend --no-edit; git push --set-upstream origin $(git rev-parse --abbrev-ref HEAD)'
 
 # ruby
-alias ber='bundle exec rspc'
+alias ber='bundle exec rspec'
 alias rr='rails routes'
 alias repl='rails db:seed:replant'
 
