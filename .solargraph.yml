@@ -1,19 +1,19 @@
 --
 include:
-- "**/*.rb"
+  - "**/*.rb"
 exclude:
-- spec/**/*
-- test/**/*
-- vendor/**/*
-- ".bundle/**/*"
-- "db/**/*"
-- "config/**/*"
-- "bin/**/*"
+  - spec/**/*
+  - test/**/*
+  - vendor/**/*
+  - ".bundle/**/*"
+  - "db/**/*"
+  - "config/**/*"
+  - "bin/**/*"
 require: []
 domains: []
 reporters:
-- rubocop
-- require_not_found
+  - rubocop
+  - require_not_found
 formatter:
   rubocop:
     cops: safe
@@ -21,7 +21,8 @@ formatter:
     only: []
     extra_args: []
 require_paths: ["lib"]
-plugins: []
+plugins:
+  - solargraph-rails
 max_files: 5000
 completion:
   visibility: "private"
