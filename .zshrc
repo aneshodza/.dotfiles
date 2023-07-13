@@ -76,6 +76,18 @@ function gacp() {
 		return 1
 	fi
 	git push --set-upstream origin $(git rev-parse --abbrev-ref HEAD)
+
+  if [ $? -ne 0 ]; then
+    echo "Push failed"
+    return 2
+  fi
+ 
+  echo "Do you want to create a PR? [y/n]"
+  read response
+
+  if [ "$response" = "y" ] || [ "$response" = "Y" ]; then
+    gh pr create -a $(gh auth status 2>&1 | grep 'Logged in to github.com as' | awk '{print $7}') -w
+  fi
 }
 
 alias gacp='gacp $1'
