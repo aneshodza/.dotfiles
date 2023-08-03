@@ -1,18 +1,19 @@
-eval "$(/opt/homebrew/bin/brew shellenv)"
-eval "$(/opt/homebrew/bin/brew shellenv)"
-source /opt/homebrew/share/antigen/antigen.zsh
+source ~/antigen.zsh
 
 [ -e "$HOME/.birthday_reminder/release/birthday-reminder" ] && "$HOME/.birthday_reminder/release/birthday-reminder"
 
-# oh-my-zsh and theme
+# SPACESHIP_PROMPT_ASYNC=false
+# This is needed if the newest version of spaceship is used as async is broken for alacritty
+
+# antigen stuff
 antigen use oh-my-zsh
-antigen theme https://github.com/denysdovhan/spaceship-zsh-theme 
-SPACESHIP_BATTERY_SHOW=false
+antigen theme spaceship-prompt/spaceship-prompt@v3.16.7
+antigen bundle zsh-users/zsh-autosuggestions
+antigen bundle junegunn/fzf
+antigen apply
 
-. $(brew --prefix asdf)/libexec/asdf.sh
 
-# plugins
-plugins=(fzf zsh-autosuggestions)
+. ~/.asdf/asdf.sh
 
 # fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
@@ -52,7 +53,6 @@ function runner() {
 	fi
 }
 alias run='runner $1'
-
 # git
 alias g='git'
 alias gitf='g fetch --all --prune'
@@ -122,11 +122,14 @@ SOLARGRAPH_GLOBAL_CONFIG='~/.dotfiles/.solargraph.yml'
 bindkey "^[[A" history-beginning-search-backward
 bindkey "^[[B" history-beginning-search-forward
 
+# tmux keybinds
+function create-tmux_window() { tmux new-window -c "$PWD" }; zle -N create-tmux_window; bindkey '^T' create-tmux_window
+function run_exit() { exit }; zle -N run_exit; bindkey '^W' run_exit
+function next-window() { tmux next-window }; zle -N next-window; bindkey '^[OP' next-window
+function previous-window() { tmux previous-window }; zle -N previous-window; bindkey '^[OQ' previous-window
+
 # misc
 alias c='clear'
 alias :q='exit'
 alias la='ls -a'
 
-antigen bundle zsh-users/zsh-autosuggestions
-
-antigen apply
