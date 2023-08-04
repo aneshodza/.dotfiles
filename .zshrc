@@ -139,3 +139,7 @@ alias dcu="dc up -d"
 alias dcd="dc down"
 alias lazydocker="$HOME/.local/bin/lazydocker"
 alias ld="lazydocker"
+alias dox='dock exec app'
+alias rb='dox bin/ruby'
+alias br='dox bin/ruby bin/rails'
+alias brs='br s -b 0.0.0.0'
