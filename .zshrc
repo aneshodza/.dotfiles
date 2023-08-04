@@ -133,3 +133,9 @@ alias c='clear'
 alias :q='exit'
 alias la='ls -a'
 
+# globaldocker alias
+alias dc="docker compose -f $HOME/globaldocker/docker-compose.yml"
+alias dcu="dc up -d"
+alias dcd="dc down"
+alias lazydocker="$HOME/.local/bin/lazydocker"
+alias ld="lazydocker"
