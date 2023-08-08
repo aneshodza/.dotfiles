@@ -132,6 +132,7 @@ function previous-window() { tmux previous-window }; zle -N previous-window; bin
 alias c='clear'
 alias :q='exit'
 alias la='ls -a'
+alias chosts="sudo nvim /etc/hosts"
 
 # globaldocker alias
 alias dc="docker compose -f $HOME/globaldocker/docker-compose.yml"
@@ -140,6 +141,6 @@ alias dcd="dc down"
 alias lazydocker="$HOME/.local/bin/lazydocker"
 alias ld="lazydocker"
 alias dox='docker compose exec app'
-alias rb='dox bin/ruby'
+alias rb='dox bin/ruby -S'
 alias br='dox bin/ruby bin/rails'
 alias brs='br s -b 0.0.0.0'
