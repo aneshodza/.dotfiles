@@ -18,6 +18,8 @@ antigen apply
 # fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export FZF_DEFAULT_COMMAND="find . -path '*/\.*' -type d -prune -o -type f -print -o -type l -print 2> /dev/null | sed s/^..//"
+source ~/.antigen/bundles/junegunn/fzf/shell/key-bindings.zsh
+bindkey '^R' fzf-history-widget
 
 # jmp
 alias jmpr='cd ~/r'
