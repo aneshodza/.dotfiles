@@ -83,16 +83,14 @@ function gacp() {
     echo "Push failed"
     return 2
   fi
- 
-  echo "Do you want to create a PR? [y/n]"
-  read response
-
-  if [ "$response" = "y" ] || [ "$response" = "Y" ]; then
-    gh pr create -a $(gh auth status 2>&1 | grep 'Logged in to github.com as' | awk '{print $7}') -w
-  fi
 }
 
-alias gacp='gacp $1'
+function gacpp() {
+  gacp $1
+  gh pr create -a $(gh auth status 2>&1 | grep 'Logged in to github.com as' | awk '{print $7}') -w
+}
+
+# alias gacp='gacp $1'
 alias gaap='git add -A; git commit --amend --no-edit; git push --set-upstream origin $(git rev-parse --abbrev-ref HEAD)'
 
 # ruby
@@ -146,3 +144,5 @@ alias dox='docker compose exec app'
 alias rb='dox bin/ruby -S'
 alias br='dox bin/ruby bin/rails'
 alias brs='br s -b 0.0.0.0'
+alias rbc='dox bin/rubocop -a'
+alias esl='dox bin/eslint --fix .'
