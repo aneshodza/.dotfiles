@@ -71,7 +71,16 @@ alias gaap='git add -A; git commit --amend --no-edit; git push --set-upstream or
 # svn
 alias gs='git svn'
 alias gsrb='git svn rebase'
-alias gsacp='git svn add -A; git commit -m $1; git svn dcommit'
+function gsacp() {
+	echo "Committing with message: $1"
+  git svn add -A
+  git commit -m $1
+	if [ $? -ne 0 ]; then
+		echo "Commit failed, most likely due to hooks"
+		return 1
+	fi
+  git svn dcommit
+}
 
 # ruby
 alias ber='bundle exec rspec'
@@ -85,7 +94,6 @@ function vimf() {
 		nvim "$file"
 	fi
 }
-alias vimf='vimf'
 alias vim='nvim'
 
 # thefuck
