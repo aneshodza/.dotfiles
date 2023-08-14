@@ -66,8 +66,12 @@ function gacpp() {
   gh pr create -a $(gh auth status 2>&1 | grep 'Logged in to github.com as' | awk '{print $7}') -w
 }
 
-# alias gacp='gacp $1'
 alias gaap='git add -A; git commit --amend --no-edit; git push --set-upstream origin $(git rev-parse --abbrev-ref HEAD)'
+
+# svn
+alias gs='git svn'
+alias gsrb='git svn rebase'
+alias gsacp='git svn add -A; git commit -m $1; git svn dcommit'
 
 # ruby
 alias ber='bundle exec rspec'
