@@ -73,7 +73,7 @@ alias gs='git svn'
 alias gsrb='git svn rebase'
 function gsacp() {
 	echo "Committing with message: $1"
-  git add -A
+  git add .
   git commit -m $1
 	if [ $? -ne 0 ]; then
 		echo "Commit failed, most likely due to hooks"
