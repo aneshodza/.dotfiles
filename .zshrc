@@ -21,15 +21,8 @@ export FZF_DEFAULT_COMMAND="find . -path '*/\.*' -type d -prune -o -type f -prin
 source ~/.antigen/bundles/junegunn/fzf/shell/key-bindings.zsh
 bindkey '^R' fzf-history-widget
 
-# jmp
-alias jmpr='cd ~/r'
-alias jmpvw='cd ~/c/vw'
-alias jmpc='cd ~/c'
-alias jmpp='cd ~/p'
-
-# editors
-alias mine='rubymine $1'
-alias code='open . -a Visual\ Studio\ Code.app'
+# asdf
+alias asdfi="cp RUBY_VERSION .ruby-version && asdf install"
 
 # git
 alias g='git'
