@@ -7,11 +7,16 @@ source ~/antigen.zsh
 
 # antigen stuff
 antigen use oh-my-zsh
-antigen theme spaceship-prompt/spaceship-prompt@v3.16.7
 antigen bundle zsh-users/zsh-autosuggestions
 antigen bundle junegunn/fzf
-antigen apply
 
+if grep -q 'Fedora' /etc/os-release; then
+  antigen theme spaceship-prompt/spaceship-prompt@v3.16.7
+else
+  antigen theme spaceship-prompt/spaceship-prompt
+fi
+
+antigen apply
 
 . ~/.asdf/asdf.sh
 
