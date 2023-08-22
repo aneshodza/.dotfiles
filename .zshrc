@@ -127,3 +127,15 @@ alias br='dox bin/ruby bin/rails'
 alias brs='br s -b 0.0.0.0'
 alias rbc='dox bin/rubocop'
 alias esl='dox bin/eslint --fix .'
+
+function ruby() {
+    # Check if Ruby exists in the Docker container
+    local docker_ruby_version=$(docker compose exec app bin/ruby -v 2>/dev/null)
+
+    # If the Docker command failed or didn't return Ruby version, use local Ruby
+    if [[ $? -ne 0 || ! $docker_ruby_version =~ "ruby" ]]; then
+        command ruby "$@"
+    else
+        docker compose exec app bin/ruby "$@"
+    fi
+}
