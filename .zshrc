@@ -114,6 +114,9 @@ alias c='clear'
 alias :q='exit'
 alias la='ls -a'
 alias chosts="sudo nvim /etc/hosts"
+export EDITOR=vim
+export VISUAL=vim
+export SVN_EDITOR=nvim
 
 # globaldocker alias
 alias dc="docker compose -f $HOME/globaldocker/docker-compose.yml"
