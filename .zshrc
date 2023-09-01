@@ -119,8 +119,8 @@ alias c='clear'
 alias :q='exit'
 alias la='ls -a'
 alias chosts="sudo nvim /etc/hosts"
-export EDITOR=vim
-export VISUAL=vim
+export EDITOR=nvim
+export VISUAL=nvim
 export SVN_EDITOR=nvim
 
 # globaldocker alias
