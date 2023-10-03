@@ -14,4 +14,6 @@
 	process = git-lfs filter-process
 	required = true
 [init]
-	defaultBranch = main
+  defaultBranch = main
+[includeIf "gitdir:~/ZHAW/"]
+  path = ~/.gitconfig_zhaw
