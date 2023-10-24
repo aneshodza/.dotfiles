@@ -119,6 +119,7 @@ alias c='clear'
 alias :q='exit'
 alias la='ls -a'
 alias chosts="sudo nvim /etc/hosts"
+alias pumkill="kill $(pgrep -f puma)"
 export EDITOR=nvim
 export VISUAL=nvim
 export SVN_EDITOR=nvim
