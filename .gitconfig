@@ -6,6 +6,7 @@
 	br = branch
 	ci = commit
 	st = status
+	cp = cherry-pick
 [core]
 	excludesfile = /Users/anes/.gitignore
 [filter "lfs"]
@@ -17,3 +18,7 @@
   defaultBranch = main
 [includeIf "gitdir:~/ZHAW/"]
   path = ~/.gitconfig_zhaw
+[merge]
+	ff = false
+[svn]
+	pushmergeinfo = true
