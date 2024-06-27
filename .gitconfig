@@ -6,6 +6,7 @@
 	br = branch
 	ci = commit
 	st = status
+	cp = cherry-pick
 [core]
 	excludesfile = /Users/anes/.gitignore
 [filter "lfs"]
@@ -21,3 +22,7 @@
   tool = vimdiff
 [includeIf "gitdir:~/ZHAW/"]
   path = ~/.gitconfig_zhaw
+[merge]
+	ff = false
+[svn]
+	pushmergeinfo = true
