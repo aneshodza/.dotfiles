@@ -15,5 +15,9 @@
 	required = true
 [init]
   defaultBranch = main
+[merge]
+  tool = vimdiff
+[diff]
+  tool = vimdiff
 [includeIf "gitdir:~/ZHAW/"]
   path = ~/.gitconfig_zhaw
