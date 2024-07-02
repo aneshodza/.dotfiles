@@ -25,6 +25,7 @@ antigen apply
 export FZF_DEFAULT_COMMAND="find . -path '*/\.*' -type d -prune -o -type f -print -o -type l -print 2> /dev/null | sed s/^..//"
 source ~/.antigen/bundles/junegunn/fzf/shell/key-bindings.zsh
 bindkey '^R' fzf-history-widget
+bindkey '^T' fzf-file-widget
 
 # asdf
 alias asdfi="cp RUBY_VERSION .ruby-version && asdf install"
@@ -107,12 +108,6 @@ SOLARGRAPH_GLOBAL_CONFIG='~/.dotfiles/.solargraph.yml'
 # keybinds
 bindkey "^[[A" history-beginning-search-backward
 bindkey "^[[B" history-beginning-search-forward
-
-# tmux keybinds
-function create-tmux_window() { tmux new-window -c "$PWD" }; zle -N create-tmux_window; bindkey '^T' create-tmux_window
-function run_exit() { exit }; zle -N run_exit; bindkey '^W' run_exit
-function next-window() { tmux next-window }; zle -N next-window; bindkey '^[OP' next-window
-function previous-window() { tmux previous-window }; zle -N previous-window; bindkey '^[OQ' previous-window
 
 # misc
 alias c='clear'
