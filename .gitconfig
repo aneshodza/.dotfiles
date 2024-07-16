@@ -22,6 +22,8 @@
   tool = vimdiff
 [includeIf "gitdir:~/ZHAW/"]
   path = ~/.gitconfig_zhaw
+[includeIf "gitdir:~/work/"]
+  path = ~/.gitconfig_sitrox
 [merge]
 	ff = false
 [svn]
