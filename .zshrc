@@ -62,7 +62,7 @@ function gacp() {
 
 function gacpp() {
   gacp $1
-  gh pr create -a $(gh auth status 2>&1 | grep 'Logged in to github.com as' | awk '{print $7}') -w
+  gh pr create
 }
 
 alias gaap='git add -A; git commit --amend --no-edit; git push --set-upstream origin $(git rev-parse --abbrev-ref HEAD)'
