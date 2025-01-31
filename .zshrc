@@ -1,20 +1,20 @@
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
 source ~/antigen.zsh
 
 [ -e "$HOME/.birthday_reminder/release/birthday-reminder" ] && "$HOME/.birthday_reminder/release/birthday-reminder"
-
-# SPACESHIP_PROMPT_ASYNC=false
-# This is needed if the newest version of spaceship is used as async is broken for alacritty
 
 # antigen stuff
 antigen use oh-my-zsh
 antigen bundle zsh-users/zsh-autosuggestions
 antigen bundle junegunn/fzf
 
-if grep -q 'Fedora' /etc/os-release; then
-  antigen theme spaceship-prompt/spaceship-prompt@v3.16.7
-else
-  antigen theme spaceship-prompt/spaceship-prompt
-fi
+antigen theme romkatv/powerlevel10k
 
 antigen apply
 
@@ -66,6 +66,7 @@ function gacpp() {
 }
 
 alias gaap='git add -A; git commit --amend --no-edit; git push --set-upstream origin $(git rev-parse --abbrev-ref HEAD)'
+alias gss='if [[ -z $(git stash list) ]]; then echo "Nothing stashed"; else echo "--------------------------------------"; for stash in $(git stash list --format="%gd"); do echo -e "\e[34m\e[107m$stash\e[0m has changed the following files:"; echo -e "$(git stash show $stash)"; echo "--------------------------------------"; done; fi'
 
 # svn
 alias gs='git svn'
@@ -143,3 +144,10 @@ function ruby() {
         docker compose exec app bin/ruby "$@"
     fi
 }
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+if [[ -f ~/.p10k.zsh ]]; then
+  source ~/.p10k.zsh
+elif [[ -f ~/.dotfiles/.p10k.zsh ]]; then
+  source ~/.dotfiles/.p10k.zsh
+fi
