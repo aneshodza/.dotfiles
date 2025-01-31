@@ -28,3 +28,5 @@
 	ff = false
 [svn]
 	pushmergeinfo = true
+[pull]
+	rebase = true

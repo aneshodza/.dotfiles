@@ -1,4 +1,5 @@
-renuo-cli
 solargraph
 solargraph-rails
 steep
+ruby-lsp
+rubocop
