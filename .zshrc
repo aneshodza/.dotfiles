@@ -119,6 +119,21 @@ alias pumkill="kill $(pgrep -f puma)"
 export EDITOR=nvim
 export VISUAL=nvim
 export SVN_EDITOR=nvim
+function crun() {
+    if [[ $# -lt 1 ]]; then
+        echo "Usage: crun <source_file.c> [params...]"
+        return 1
+    fi
+
+    local src_file="$1"
+    shift
+
+    gcc "$src_file" -o a.out && ./a.out "$@"
+    local exit_code=$?
+    rm -f a.out
+
+    return $exit_code
+}
 
 # globaldocker alias
 alias dc="docker compose -f $HOME/globaldocker/docker-compose.yml"
