@@ -1,15 +1,15 @@
 --
 include:
   - "**/*.rb"
+bundler: true
 exclude:
-  - spec/**/*
-  - test/**/*
-  - vendor/**/*
-  - ".bundle/**/*"
-  - "db/**/*"
-  - "config/**/*"
-  - "bin/**/*"
-require: []
+  - "log/**/*"
+  - "tmp/**/*"
+  - "node_modules/**/*"
+  - "db/schema.rb"
+  - "db/migrate/**/*"
+  - ".git/**/*"
+  - "coverage/**/*"
 domains: []
 reporters:
   - rubocop
