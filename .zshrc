@@ -95,6 +95,7 @@ function vimf() {
 	fi
 }
 alias vim='nvim'
+alias vimdiff='nvim -d'
 
 # thefuck
 eval $(thefuck --alias)
