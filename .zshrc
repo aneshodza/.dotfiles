@@ -105,7 +105,7 @@ alias tf='fuck'
 alias lag='~/.speedtest/speedtest-cli'
 
 # solargraph
-SOLARGRAPH_GLOBAL_CONFIG='~/.dotfiles/.solargraph.yml'
+export SOLARGRAPH_GLOBAL_CONFIG='~/.dotfiles/.solargraph.yml'
 
 # keybinds
 bindkey "^[[A" history-beginning-search-backward
