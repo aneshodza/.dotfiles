@@ -114,7 +114,7 @@ bindkey "^[[B" history-beginning-search-forward
 # misc
 alias c='clear'
 alias :q='exit'
-alias la='ls -a'
+alias la='ls -lahs'
 alias chosts="sudo nvim /etc/hosts"
 alias pumkill="kill $(pgrep -f puma)"
 export EDITOR=nvim
