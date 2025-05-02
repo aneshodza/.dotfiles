@@ -89,10 +89,10 @@ alias repl='rails db:seed:replant'
 
 # vim
 function vimf() {
-	file=$(fzf --height 40% --reverse)
-	if [[ -n "$file" ]]; then
-		nvim "$file"
-	fi
+  file=$(git ls-files --cached --others --exclude-standard | fzf --height 40% --reverse)
+  if [[ -n "$file" ]]; then
+    nvim "$file"
+  fi
 }
 alias vim='nvim'
 alias vimdiff='nvim -d'
