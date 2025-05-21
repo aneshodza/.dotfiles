@@ -1,12 +1,6 @@
 [user]
 	name = Anes Hodza
 	email = anes.hodza04@gmail.com
-[alias]
-	co = checkout
-	br = branch
-	ci = commit
-	st = status
-	cp = cherry-pick
 [core]
 	excludesfile = /Users/anes/.gitignore
 [filter "lfs"]
@@ -26,7 +20,5 @@
   path = ~/.gitconfig_sitrox
 [merge]
 	ff = false
-[svn]
-	pushmergeinfo = true
 [pull]
 	rebase = true
