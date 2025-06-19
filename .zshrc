@@ -97,6 +97,15 @@ function vimf() {
 alias vim='nvim'
 alias vimdiff='nvim -d'
 
+# Start an empty nvim instance
+alias evim='nvim -u NONE'
+function evimf() {
+  file=$(git ls-files --cached --others --exclude-standard | fzf --height 40% --reverse)
+  if [[ -n "$file" ]]; then
+    evim "$file"
+  fi
+}
+
 # thefuck
 eval $(thefuck --alias)
 alias tf='fuck'

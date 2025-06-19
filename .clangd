@@ -1,7 +1,7 @@
 CompileFlags:
   Add: [
-    # -std=c89,
-    -Iinclude,
+    -std=c89,
+    -I../include,
     -I/opt/homebrew/opt/cunit/include,
     -I/opt/homebrew/opt/sdl2/include,
     -Wall,
