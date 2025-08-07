@@ -176,3 +176,7 @@ if [[ -f ~/.p10k.zsh ]]; then
 elif [[ -f ~/.dotfiles/.p10k.zsh ]]; then
   source ~/.dotfiles/.p10k.zsh
 fi
+
+# c#
+export DOTNET_ROOT="$HOME/.asdf/installs/dotnet-core/9.0.304"
+export PATH="$DOTNET_ROOT:$DOTNET_ROOT/tools:$HOME/.dotnet/tools:$PATH"
