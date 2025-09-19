@@ -180,3 +180,7 @@ fi
 # c#
 export DOTNET_ROOT="$HOME/.asdf/installs/dotnet-core/9.0.304"
 export PATH="$DOTNET_ROOT:$DOTNET_ROOT/tools:$HOME/.dotnet/tools:$PATH"
+
+
+# Load Angular CLI autocompletion.
+source <(ng completion script)
