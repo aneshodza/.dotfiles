@@ -178,9 +178,51 @@ elif [[ -f ~/.dotfiles/.p10k.zsh ]]; then
 fi
 
 # c#
-export DOTNET_ROOT="$HOME/.asdf/installs/dotnet-core/9.0.304"
+export DOTNET_ROOT="$HOME/.asdf/installs/dotnet-core/10.0.100"
 export PATH="$DOTNET_ROOT:$DOTNET_ROOT/tools:$HOME/.dotnet/tools:$PATH"
 
 
 # Load Angular CLI autocompletion.
-source <(ng completion script)
+source <(ng completion script 2>/dev/null)
+
+# Claude Code
+alias cc='claude --allow-dangerously-skip-permissions'
+
+ccm() {
+    local key=$(security find-generic-password -s "MINIMAX_API_KEY" -w 2>/dev/null)
+    
+    if [[ -z "$key" ]]; then
+        echo "❌ Error: MiniMax_API_Key not found in Apple Passwords."
+        return 1
+    fi
+
+    # 2. Inject the environment variables for this session only
+    export ANTHROPIC_API_KEY="$key"
+    export ANTHROPIC_BASE_URL="https://api.minimax.io/anthropic"
+    export ANTHROPIC_MODEL="minimax-m2.7-highspeed"
+
+    # 3. Launch Claude Code
+    command claude --allow-dangerously-skip-permissions "$@"
+}
+
+aned() {
+  local name="${1:?usage: aned <shared|winti|...>}"
+  local dir="/Users/anes/private/localmate/ansible/group_vars"
+  local file id
+  if [[ "$name" == "shared" || "$name" == "all" ]]; then
+    file="$dir/all/vault.yml"; id="shared"
+  else
+    file="$dir/$name/vault.yml"; id="$name"
+  fi
+  ansible-vault edit --vault-id "$id@$HOME/.ansible/vault/$id.key" "$file"
+}
+
+export PATH="$HOME/.bun/bin:$PATH"
+
+# NvChad v2.5 migration, testing in parallel with the live config.
+# NVIM_APPNAME redirects config/data/state/cache, so `nvim` is unaffected.
+# Remove this once ~/.config/nvim-next is merged and the worktree is gone.
+alias vnext='NVIM_APPNAME=nvim-next nvim'
+
+# uv tools (hf, etc.), ahead of asdf shims
+export PATH="$HOME/.local/bin:$PATH"
